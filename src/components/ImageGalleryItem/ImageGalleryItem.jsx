@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 
 import style from './ImageGalleryItem.module.css';
 
+
 export class ImageGalleryItem extends Component {
   render() {
     const { webformatURL, largeImageURL, onImageClick } = this.props;
@@ -19,8 +20,8 @@ export class ImageGalleryItem extends Component {
   }
 }
 
-imageGalleryItem.propTypes = {
+ImageGalleryItem.propTypes = {
   webformatURL: PropTypes.string,
-  largImageURL: PropTypes.string,
+  largeImageURL: PropTypes.string,
   onImageClick: PropTypes.func,
 };
