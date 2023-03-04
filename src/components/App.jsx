@@ -19,7 +19,7 @@ export class App extends Component {
     error: null,
     modal: {
       showModal: false,
-      largeImageURL: ''
+      largeImageURL: '',
     },
     noResults: false,
   };
@@ -99,27 +99,17 @@ export class App extends Component {
         />
         <Section>
           {isLoading && <Loader />}
-          {noResults && (
+          {noResults &&
             Report.warning(
               'Warning',
               'No images found. Please try another query.',
-              'Okay',
-            )         
-          )}
-        <ImageGallery images={images} onImageClick={this.onImageClick} />
-          {error && (
-             Report.warning(
-              'Warning',
-              'Something went wrong',
-              'Okay',
-            )          
-          )}
+              'Okay'
+            )}
+          <ImageGallery images={images} onImageClick={this.onImageClick} />
+          {error && Report.warning('Warning', 'Something went wrong', 'Okay')}
         </Section>
         {page < lastPage && !isLoading && !error ? (
-          <Button
-            label={'Load more'}
-            handleLoadMore={this.handleLoadMore}
-          />
+          <Button label={'Load more'} handleLoadMore={this.handleLoadMore} />
         ) : (
           <div style={{ height: 40 }}></div>
         )}
